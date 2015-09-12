@@ -3,17 +3,27 @@
   margin-bottom: 10px;
   .message-inner {
     max-width: 70%;
-    padding: 10px;
-    border: solid #ccc 1px;
-    border-radius: 10px;
     &.from-me {
       float: right;
+      border-radius: 10px 10px 0px 10px;
+      background: #fff;
     }
     &.from-addit {
       float: left;
+      border-radius: 10px 10px 10px 0px;
+      background: $black;
+      color: #fff;
     }
     p {
-      margin: 0;
+      margin: 10px;
+    }
+
+    .action {
+      width: 100%;
+      background: inherit;
+      border: none;
+      border-top: solid $light-grey 1px;
+      border-radius: 0px 0px 10px 0px;
     }
   }
 }

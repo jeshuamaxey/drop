@@ -1,3 +1,5 @@
 div.message.clearfix
   .message-inner(ng-class="{'from-me': isFromMe(msg), 'from-addit': !isFromMe(msg)}")
     p {{msg.text}}
+    button.action(ng-show="msg.actions.length", ng-repeat="action in msg.actions")
+      | {{action}}

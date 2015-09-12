@@ -12,7 +12,7 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
   box-sizing: border-box;
 }
 
-html, body, [ng-view] {
+html, body, [ui-view] {
   width: 100%;
   height: 100%;
 }
@@ -30,10 +30,12 @@ html, body, [ng-view] {
 
 // Component styles are injected through grunt
 // injector
+@import '_partials/_vars.scss';
+@import '_partials/typography.scss';
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
 @import 'directives/message/message.scss';
 @import 'main/main.scss';
-@import 'partials/typography.scss';
 @import 'modal/modal.scss';
+@import 'navbar/_navbar.scss';
 // endinjector
