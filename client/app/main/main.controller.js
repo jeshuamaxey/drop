@@ -17,7 +17,7 @@ angular.module('addItApp')
     }, {
       from: 'addit',
       concern: 'confirmation',
-      text: 'Sure it\'s in there',
+      text: 'Sure, it\'s in there',
       items: ['http://www.placecage.com/c/200/201'],
       actions: ['undo']
     }, {
@@ -29,7 +29,7 @@ angular.module('addItApp')
       text: 'Is this enough?',
       items: ['http://www.placecage.com/c/200/202'],
       detail: '1L',
-      actions: ['undo', 'no']
+      actions: ['yes', 'no']
     }, {
       from: 'me',
       text: 'and some fabric softener'
@@ -59,5 +59,16 @@ angular.module('addItApp')
         'http://www.placecage.com/c/200/200',
         'http://www.placecage.com/c/201/200',
         'http://www.placecage.com/c/202/200']
+    }, {
+      from: 'me',
+      text: 'travel size'
+    }, {
+      from: 'addit',
+      concern: 'multi-choice',
+      text: 'OK',
+      items: [
+        'http://www.placecage.com/c/200/201',
+        'http://www.placecage.com/c/201/201',
+        'http://www.placecage.com/c/202/201']
     }];
   });

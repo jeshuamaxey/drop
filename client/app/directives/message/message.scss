@@ -3,6 +3,7 @@
   margin-bottom: 10px;
   .message-inner {
     max-width: 70%;
+    overflow: hidden;
     &.from-me {
       float: right;
       border-radius: 10px 10px 0px 10px;
@@ -26,11 +27,20 @@
     }
 
     .action {
-      width: 100%;
       background: inherit;
+      padding: 9px 0;
       border: none;
       border-top: solid $light-grey 1px;
-      border-radius: 0px 0px 10px 0px;
+      &.half-width {
+        width: 50%;
+        float: left;
+        &:not(:last-child) {
+          border-right: solid $light-grey 1px;
+        }
+      }
+      &.full-width {
+        width: 100%;
+      }
     }
   }
 }

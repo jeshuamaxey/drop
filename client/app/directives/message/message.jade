@@ -5,27 +5,27 @@ div.message.clearfix
   //- Confirmation
   .message-inner.from-addit.confirmation(ng-show="{{msg.concern === 'confirmation'}}")
     p {{msg.text}}
-    .image-wrapper
-      img(ng-show="msg.items.length", ng-src="{{msg.items[0]}}")
-    button.action(ng-show="msg.actions.length",
+    .image-wrapper(ng-show="msg.items.length")
+      img(ng-src="{{msg.items[0]}}")
+    button.action.full-width(ng-show="msg.actions.length",
       ng-repeat="action in msg.actions")
       | {{action}}
   
   //- Decision
   .message-inner.from-addit.decision(ng-show="{{msg.concern === 'decision'}}")
     p {{msg.text}}
-    img(ng-show="msg.items.length")
-    button.action(ng-show="msg.actions.length",
+    .image-wrapper(ng-show="msg.items.length")
+      img(ng-src="{{msg.items[0]}}")
+    button.action.half-width(ng-show="msg.actions.length",
       ng-repeat="action in msg.actions")
       | {{action}}
   
   //- Choice
   .message-inner.from-addit.choice(ng-show="{{msg.concern === 'choice'}}")
     p {{msg.text}}
-    img(ng-show="msg.items.length")
-    button.action(ng-show="msg.actions.length",
-      ng-repeat="action in msg.actions")
-      | {{action}}
+    .image-wrapper(ng-show="msg.items.length",
+      ng-repeat="item in msg.items")
+      img(ng-src="{{item}}")
 
   //- Multi-choice
   .message-inner.from-addit.multi-choice(ng-show="{{msg.concern === 'multi-choice'}}")
