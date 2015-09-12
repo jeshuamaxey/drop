@@ -18,6 +18,13 @@
       margin: 10px;
     }
 
+    .image-wrapper {
+      text-align: center;
+      img {
+        max-width: 200px;
+      }
+    }
+
     .action {
       width: 100%;
       background: inherit;

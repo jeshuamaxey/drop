@@ -1,5 +1,36 @@
 div.message.clearfix
-  .message-inner(ng-class="{'from-me': isFromMe(msg), 'from-addit': !isFromMe(msg)}")
+  //- From me
+  .message-inner.from-me(ng-show="isFromMe(msg)")
     p {{msg.text}}
-    button.action(ng-show="msg.actions.length", ng-repeat="action in msg.actions")
+  //- Confirmation
+  .message-inner.from-addit.confirmation(ng-show="{{msg.concern === 'confirmation'}}")
+    p {{msg.text}}
+    .image-wrapper
+      img(ng-show="msg.items.length", ng-src="{{msg.items[0]}}")
+    button.action(ng-show="msg.actions.length",
+      ng-repeat="action in msg.actions")
+      | {{action}}
+  
+  //- Decision
+  .message-inner.from-addit.decision(ng-show="{{msg.concern === 'decision'}}")
+    p {{msg.text}}
+    img(ng-show="msg.items.length")
+    button.action(ng-show="msg.actions.length",
+      ng-repeat="action in msg.actions")
+      | {{action}}
+  
+  //- Choice
+  .message-inner.from-addit.choice(ng-show="{{msg.concern === 'choice'}}")
+    p {{msg.text}}
+    img(ng-show="msg.items.length")
+    button.action(ng-show="msg.actions.length",
+      ng-repeat="action in msg.actions")
+      | {{action}}
+
+  //- Multi-choice
+  .message-inner.from-addit.multi-choice(ng-show="{{msg.concern === 'multi-choice'}}")
+    p {{msg.text}}
+    img(ng-show="msg.items.length")
+    button.action(ng-show="msg.actions.length",
+      ng-repeat="action in msg.actions")
       | {{action}}
