@@ -1,0 +1,3 @@
+div.message.clearfix
+  .message-inner(ng-class="{'from-me': isFromMe(msg), 'from-addit': !isFromMe(msg)}")
+    p {{msg.text}}
