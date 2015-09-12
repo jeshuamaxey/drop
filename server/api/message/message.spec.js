@@ -17,4 +17,21 @@ describe('GET /api/messages', function() {
         done();
       });
   });
+
+  it('should respond respond to tea', function(done) {
+    request(app)
+      .post('/api/messages')
+      .send({
+        text: 'give me some tea'
+      })
+      .expect(201)
+      .expect('Content-Type', /json/)
+      .end(function(err, res) {
+        if (err) return done(err);
+        console.log(res.body);
+        res.body.action.should.exist;
+        res.body.text.should.exist;
+        done();
+      });
+  });
 });

@@ -2,6 +2,7 @@
 
 var _ = require('lodash');
 var Message = require('./message.model');
+var Item = require('../item/item.model');
 
 // Get list of messages
 exports.index = function(req, res) {
@@ -25,12 +26,50 @@ exports.create = function(req, res) {
   var message = req.body;
   Message.create(req.body, function(err, message) {
     if(err) { return handleError(res, err); }
-    Message.create(
-      { text: 'sorry I don\'t understand' }, 
-      function(err, response) {
-        return res.json(201, response);
-      }
-    )
+    var response = {
+      from: 'addit',
+      text: 'Sorry, I don\'t understand what you mean!'
+    }
+    if (message.text.toLowerCase().indexOf('tea') > -1) {
+      Item.find({section: 'tea'}).exec()
+      .then(function(items) {
+        response.text = 'Here you go!',
+        response.action = {
+          items: items,
+          concern: 'add'
+        }
+        Message.create(
+          response, 
+          function(err, r) {
+            return res.json(201, r);
+          }
+        )
+      })
+    } else if (message.text.toLowerCase().indexOf('holiday') > -1) {
+      Item.findOne({section: 'holiday'}).exec()
+      .then(function(item) {
+        var response = _.merge(response, {
+          text: 'Have a nice trip Jesh!',
+          action: {
+            items: [item],
+            concern: 'add'
+          }
+        });
+        Message.create(
+          response, 
+          function(err, r) {
+            return res.json(201, r);
+          }
+        )
+      })
+    } else {
+      Message.create(
+        response, 
+        function(err, response) {
+          return res.json(201, response);
+        }
+      )
+    }
   });
 };
 
