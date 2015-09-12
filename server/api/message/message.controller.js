@@ -23,10 +23,14 @@ exports.show = function(req, res) {
 // Creates a new message in the DB.
 exports.create = function(req, res) {
   var message = req.body;
-  message.response = 'Sorry I don\'t understand what you mean';
   Message.create(req.body, function(err, message) {
     if(err) { return handleError(res, err); }
-    return res.json(201, message);
+    Message.create(
+      { text: 'sorry I don\'t understand' }, 
+      function(err, response) {
+        return res.json(201, response);
+      }
+    )
   });
 };
 
@@ -37,7 +41,6 @@ exports.update = function(req, res) {
     if (err) { return handleError(res, err); }
     if(!message) { return res.send(404); }
     var updated = _.merge(message, req.body);
-    updated.response = 'Sorry I don\'t understand what you mean';
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.json(200, message);
