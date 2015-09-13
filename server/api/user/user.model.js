@@ -3,6 +3,7 @@
 var mongoose = require('mongoose-bird')();
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
+var ObjectId = Schema.Types.ObjectId;
 var authTypes = ['github', 'twitter', 'facebook', 'google'];
 
 var UserSchema = new Schema({
@@ -17,6 +18,14 @@ var UserSchema = new Schema({
   },
   password: String,
   provider: String,
+  currentList: {
+    type: ObjectId,
+    ref: 'List'
+  },
+  history: [{
+    type: ObjectId,
+    ref: 'Item'
+  }],
   salt: String,
   facebook: {},
   twitter: {},
