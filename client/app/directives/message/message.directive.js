@@ -23,6 +23,9 @@ angular.module('addItApp')
               break;
           }
         }
+        scope.choose = function(item) {
+          item.chosen = !item.chosen;
+        };
         scope.toggleOnList = function(item) {
           item.onList = !item.onList;
         }
