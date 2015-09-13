@@ -2,7 +2,7 @@
   width: 100%;
   margin-bottom: 10px;
   .message-inner {
-    max-width: 70%;
+    max-width: 80%;
     overflow: hidden;
     &.from-me {
       float: right;
@@ -17,6 +17,14 @@
     }
     p {
       margin: 10px;
+      &.detail {
+        position: relative;
+        margin: 0;
+        background-color: #fff;
+        color: $black;
+        width: 100%;
+        height: 20px;
+      }
     }
 
     .image-wrapper {
@@ -40,6 +48,38 @@
       }
       &.full-width {
         width: 100%;
+      }
+    }
+
+    &.multi-choice {
+      .item-list {
+        width: 100%;
+      }
+
+      .item {
+        img {
+          display: inline-block;
+          width: 20%;
+        }
+        p {
+          display: inline-block;
+          width: 60%;
+          margin: 0;
+          padding-left: 8px;
+        }
+        button {
+          display: inline-block;
+          width: 20%;
+          height: 100%;
+          margin: 0;
+          padding: 9px 0;
+          background: inherit;
+          border: none;
+          border-left: solid $light-grey 1px;
+        }
+        &.on-list {
+          background: $green;
+        }
       }
     }
   }

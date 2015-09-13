@@ -9,8 +9,15 @@ angular.module('addItApp')
       from: 'addit',
       concern: 'confirmation',
       text: 'OK. I\'ve added it',
-      items: ['http://www.placecage.com/c/200/200'],
-      actions: ['undo']
+      items: [{
+        name: 'shampoo',
+        src: 'http://www.placecage.com/c/200/201',
+        quantity: 0
+      }],
+      actions: [{
+        dodo: 'undo',
+        undo: 're add'
+      }]
     }, {
       from: 'me',
       text: 'And some deturgent too'
@@ -18,8 +25,15 @@ angular.module('addItApp')
       from: 'addit',
       concern: 'confirmation',
       text: 'Sure, it\'s in there',
-      items: ['http://www.placecage.com/c/200/201'],
-      actions: ['undo']
+      items: [{
+        name: 'shampoo',
+        src: 'http://www.placecage.com/c/200/201',
+        quantity: 0
+      }],
+      actions: [{
+        dodo: 'undo',
+        undo: 're add'
+      }]
     }, {
       from: 'me',
       text: 'more'
@@ -27,8 +41,12 @@ angular.module('addItApp')
       from: 'addit',
       concern: 'decision',
       text: 'Is this enough?',
-      items: ['http://www.placecage.com/c/200/202'],
-      detail: '1L',
+      items: [{
+        name: 'shampoo',
+        src: 'http://www.placecage.com/c/200/201',
+        quantity: 0
+      }],
+      detail: '2L bottle',
       actions: ['yes', 'no']
     }, {
       from: 'me',
@@ -37,17 +55,30 @@ angular.module('addItApp')
       from: 'addit',
       concern: 'confirmation',
       text: 'Safe',
-      items: ['http://www.placecage.com/c/200/203'],
-      detail: '1L',
+      items: [{
+        name: 'shampoo',
+        src: 'http://www.placecage.com/c/200/201',
+        quantity: 0
+      }],
+      detail: '2L bottle',
       actions: ['undo']
     }, {
       from: 'addit',
       concern: 'choice',
       text: 'Any of these?',
-      items: [
-        'http://www.placecage.com/c/200/200',
-        'http://www.placecage.com/c/201/200',
-        'http://www.placecage.com/c/202/200'],
+      items: [{
+        name: 'shampoo',
+        src: 'http://www.placecage.com/c/200/201',
+        quantity: 0
+      }, {
+        name: 'shampoo',
+        src: 'http://www.placecage.com/c/200/201',
+        quantity: 0
+      }, {
+        name: 'shampoo',
+        src: 'http://www.placecage.com/c/200/201',
+        quantity: 0
+      }]
     }, {
       from: 'me',
       text: 'I need toiletries'
@@ -55,20 +86,46 @@ angular.module('addItApp')
       from: 'addit',
       concern: 'multi-choice',
       text: 'Which ones?',
-      items: [
-        'http://www.placecage.com/c/200/200',
-        'http://www.placecage.com/c/201/200',
-        'http://www.placecage.com/c/202/200']
+      items: [{
+        name: 'shampoo',
+        src: 'http://www.placecage.com/c/200/201',
+        quantity: 0
+      }, {
+        name: 'conditioner',
+        src: 'http://www.placecage.com/c/201/201',
+        quantity: 0
+      }, {
+        name: 'deodorant',
+        src: 'http://www.placecage.com/c/202/201',
+        quantity: 0
+      }, {
+        name: 'shaving foam',
+        src: 'http://www.placecage.com/c/204/202',
+        quantity: 0
+      }]
     }, {
       from: 'me',
       text: 'travel size'
     }, {
       from: 'addit',
       concern: 'multi-choice',
-      text: 'OK',
-      items: [
-        'http://www.placecage.com/c/200/201',
-        'http://www.placecage.com/c/201/201',
-        'http://www.placecage.com/c/202/201']
+      text: 'OK these are all 100ml',
+      items: [{
+        name: 'shampoo',
+        src: 'http://www.placecage.com/c/200/201',
+        quantity: 0
+      }, {
+        name: 'conditioner',
+        src: 'http://www.placecage.com/c/201/201',
+        quantity: 0
+      }, {
+        name: 'deodorant',
+        src: 'http://www.placecage.com/c/202/201',
+        quantity: 0
+      }, {
+        name: 'shaving foam',
+        src: 'http://www.placecage.com/c/204/202',
+        quantity: 0
+      }]
     }];
   });
