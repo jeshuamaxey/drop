@@ -104,7 +104,9 @@ var responses = [{
         name: 'shaving foam',
         src: 'http://www.placecage.com/c/204/202',
         quantity: 0
-      }];
+      }]
+    }
+  ];
 
 // Get list of messages
 exports.index = function(req, res) {
@@ -206,7 +208,11 @@ exports.destroy = function(req, res) {
 // Returns response from given index
 exports.response = function(req, res) {
   var message = responses[req.params.id];
-  return res.json(200, message);
+  var delay = Math.floor(Math.random()*500) + 500;
+  setTimeout(function() {
+    console.log(message);
+    return res.json(200, message);
+  }, delay);
 }
 
 function handleError(res, err) {

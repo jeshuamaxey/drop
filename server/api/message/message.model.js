@@ -9,7 +9,7 @@ var MessageSchema = new Schema({
   action: {
     concern: String,
     items: [{
-      type: ObjectId,
+      type: Schema.Types.ObjectId,
       ref: 'Item'
     }]
   },
