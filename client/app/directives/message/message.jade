@@ -34,7 +34,7 @@ div.message.clearfix
       ng-repeat="item in msg.items")
       .image-wrapper
         img(ng-src="{{item.src}}")
-        button.action.full-width.choice(ng-click="choose(item)")
+        button.action.full-width.choice(ng-click="choose(item)", ng-class="{'done': item.chosen}")
           | {{ item.chosen ? 'remove' : 'add'}}
 
   //- Multi-choice
