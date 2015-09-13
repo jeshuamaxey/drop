@@ -10,7 +10,7 @@ var responses =  [{
       text: 'OK. I\'ve added it',
       items: [{
         name: 'shampoo',
-        src: '/assets/images/washing_up_liquid',
+        src: '/assets/images/washing_up_liquid.jpg',
         quantity: 0
       }],
       actions: [{
@@ -23,7 +23,7 @@ var responses =  [{
       text: 'Sure, it\'s in there',
       items: [{
         name: 'shampoo',
-        src: '/assets/images/detergent',
+        src: '/assets/images/detergent.jpg',
         quantity: 0
       }],
       actions: [{
@@ -36,10 +36,10 @@ var responses =  [{
       text: 'Is this enough?',
       items: [{
         name: 'shampoo',
-        src: '/assets/images/detergent_large',
+        src: '/assets/images/detergent_large.jpg',
         quantity: 0
       }],
-      detail: '2L bottle',
+      detail: '40 loads',
       actions: ['yes', 'no']
     }, {
       from: 'addit',
@@ -47,10 +47,10 @@ var responses =  [{
       text: 'Got it',
       items: [{
         name: 'shampoo',
-        src: '/assets/images/softner',
+        src: '/assets/images/softner.jpg',
         quantity: 0
       }],
-      detail: '2L bottle',
+      detail: '40 loads',
       actions: [{
         cta: 'undo',
         confirmation: 'undone'
@@ -61,15 +61,15 @@ var responses =  [{
       text: 'Any of these?',
       items: [{
         name: 'shampoo',
-        src: '/assets/images/softner_0',
+        src: '/assets/images/softner_0.jpg',
         quantity: 0
       }, {
         name: 'shampoo',
-        src: '/assets/images/softner_1',
+        src: '/assets/images/softner_1.png',
         quantity: 0
       }, {
         name: 'shampoo',
-        src: '/assets/images/softner_2',
+        src: '/assets/images/softner_2.jpg',
         quantity: 0
       }]
     }, {
@@ -77,20 +77,20 @@ var responses =  [{
       concern: 'multi-choice',
       text: 'Which ones?',
       items: [{
-        name: 'shampoo',
-        src: '/assets/images/shampoo',
+        name: 'shower gel',
+        src: '/assets/images/shampoo.jpg',
         quantity: 0
       }, {
-        name: 'conditioner',
-        src: '/assets/images/toothpaste',
+        name: 'toothpaste',
+        src: '/assets/images/toothpaste.jpg',
         quantity: 0
       }, {
         name: 'deodorant',
-        src: '/assets/images/deodorant',
+        src: '/assets/images/deodorant.jpg',
         quantity: 0
       }, {
         name: 'shaving foam',
-        src: '/assets/images/shaving_gel',
+        src: '/assets/images/shaving_gel.jpg',
         quantity: 0
       }]
     }, {
@@ -98,21 +98,29 @@ var responses =  [{
       concern: 'multi-choice',
       text: 'OK these are all 100ml',
       items: [{
-        name: 'shampoo',
-        src: '/assets/images/shampoo_small',
+        name: 'shower gel',
+        src: '/assets/images/shampoo_small.png',
         quantity: 0
       }, {
-        name: 'conditioner',
-        src: '/assets/images/toothpaste_small',
+        name: 'toothpaste',
+        src: '/assets/images/toothpaste_small.jpg',
         quantity: 0
       }, {
         name: 'deodorant',
-        src: '/assets/images/deodorant_small',
+        src: '/assets/images/deodorant_small.jpg',
         quantity: 0
       }, {
         name: 'shaving foam',
-        src: '/assets/images/shaving_gel_small',
+        src: '/assets/images/shaving_gel_small.jpg',
         quantity: 0
+      }]
+    }, {
+      from: 'addit',
+      concern: 'confirmation',
+      text: 'You\'ve got Persil washing up liquid and detergent, Comfort fabric softener and travel size shower gel and toothpaste.',
+      actions: [{
+        cta: 'buy now',
+        confirmation: 'One moment please :)'
       }]
     }];
 
