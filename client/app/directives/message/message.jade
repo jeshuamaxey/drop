@@ -1,0 +1,45 @@
+div.message.clearfix
+  //- From me
+  .message-inner.from-me(ng-show="isFromMe(msg)")
+    p {{msg.text}}
+  //- Confirmation
+  .message-inner.from-addit.confirmation(ng-show="{{msg.concern === 'confirmation'}}")
+    p {{msg.text}}
+    .image-wrapper(ng-show="msg.items.length")
+      img(ng-src="{{msg.items[0].src}}")
+    button.action.full-width(ng-show="msg.actions.length",
+      ng-repeat="action in msg.actions",
+      ng-click="done = !done")
+      | {{done ? action.undo : action.dodo}}
+  
+  //- Decision
+  .message-inner.from-addit.decision(ng-show="{{msg.concern === 'decision'}}")
+    p {{msg.text}}
+    .image-wrapper(ng-show="msg.items.length")
+      img(ng-src="{{msg.items[0].src}}")
+      p.detail(ng-show="msg.detail")
+        | {{msg.detail}}
+    button.action.half-width(ng-show="msg.actions.length",
+      ng-repeat="action in msg.actions")
+      | {{action}}
+
+  
+  //- Choice
+  .message-inner.from-addit.choice(ng-show="{{msg.concern === 'choice'}}")
+    p {{msg.text}}
+    .image-wrapper(ng-show="msg.items.length",
+      ng-repeat="item in msg.items")
+      img(ng-src="{{item.src}}")
+
+  //- Multi-choice
+  .message-inner.from-addit.multi-choice(ng-show="{{msg.concern === 'multi-choice'}}")
+    p {{msg.text}}
+    .item-list
+      .item(ng-repeat="item in msg.items", ng-class="{'on-list': item.onList}")
+        img(ng-src="{{item.src}}")
+        p {{item.name}}
+        button(ng-click="toggleOnList(item)")
+          | {{item.onList ? '&times' : 'Add'}}
+    button.action(ng-show="msg.actions.length",
+      ng-repeat="action in msg.actions")
+      | {{action}}

@@ -1,0 +1,86 @@
+.message {
+  width: 100%;
+  margin-bottom: 10px;
+  .message-inner {
+    max-width: 80%;
+    overflow: hidden;
+    &.from-me {
+      float: right;
+      border-radius: 10px 10px 0px 10px;
+      background: #fff;
+    }
+    &.from-addit {
+      float: left;
+      border-radius: 10px 10px 10px 0px;
+      background: $black;
+      color: #fff;
+    }
+    p {
+      margin: 10px;
+      &.detail {
+        position: relative;
+        margin: 0;
+        background-color: #fff;
+        color: $black;
+        width: 100%;
+        height: 20px;
+      }
+    }
+
+    .image-wrapper {
+      text-align: center;
+      img {
+        max-width: 200px;
+      }
+    }
+
+    .action {
+      background: inherit;
+      padding: 9px 0;
+      border: none;
+      border-top: solid $light-grey 1px;
+      &.half-width {
+        width: 50%;
+        float: left;
+        &:not(:last-child) {
+          border-right: solid $light-grey 1px;
+        }
+      }
+      &.full-width {
+        width: 100%;
+      }
+    }
+
+    &.multi-choice {
+      .item-list {
+        width: 100%;
+      }
+
+      .item {
+        img {
+          display: inline-block;
+          width: 20%;
+        }
+        p {
+          display: inline-block;
+          width: 60%;
+          margin: 0;
+          padding-left: 8px;
+        }
+        button {
+          display: inline-block;
+          width: 20%;
+          height: 100%;
+          margin: 0;
+          padding: 9px 0;
+          background: inherit;
+          border: none;
+          border-left: solid $light-grey 1px;
+        }
+        &.on-list {
+          background: $green;
+        }
+      }
+    }
+  }
+}

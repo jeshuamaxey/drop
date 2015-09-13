@@ -8,6 +8,19 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
  * App-wide Styles
  */
 
+* {
+  box-sizing: border-box;
+}
+
+html, body, [ui-view] {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar-text {
+  margin-left: 15px;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -17,7 +30,12 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 
 // Component styles are injected through grunt
 // injector
+@import '_partials/_vars.scss';
+@import '_partials/typography.scss';
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
+@import 'directives/message/message.scss';
 @import 'main/main.scss';
+@import 'modal/modal.scss';
+@import 'navbar/_navbar.scss';
 // endinjector
