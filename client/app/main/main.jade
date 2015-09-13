@@ -4,5 +4,5 @@ div(ng-include='"components/navbar/navbar.html"')
   message(ng-repeat="msg in chatLog" msg="msg")
 
 
-form.chat(name="chat")
+form.chat(name="chat", ng-submit="nextMessage()")
   input(type="text", placeholder="Need something, Addit")

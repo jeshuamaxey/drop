@@ -207,11 +207,10 @@ exports.destroy = function(req, res) {
 // Fake it till you make it 
 // Returns response from given index
 exports.response = function(req, res) {
-  var message = responses[req.params.id];
+  var message = responses[Number(req.query.id)];
   var delay = Math.floor(Math.random()*500) + 500;
   setTimeout(function() {
-    console.log(message);
-    return res.json(200, message);
+    return res.status(200).send(message);
   }, delay);
 }
 

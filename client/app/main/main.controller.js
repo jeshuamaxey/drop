@@ -2,6 +2,18 @@
 
 angular.module('addItApp')
   .controller('MainCtrl', function($scope, $http, socket) {
+    $scope.messageIndex = 0;
+    
+    $scope.nextMessage = function() {
+      var url = '/api/messages/next?id=' + $scope.messageIndex;
+
+      $http.get(url)
+      .then(function(res) {
+        console.log(res);
+        $scope.messageIndex++;
+      });
+    };
+
     $scope.chatLog = [{
       from: 'me',
       text: 'I need some washing up liquid'
