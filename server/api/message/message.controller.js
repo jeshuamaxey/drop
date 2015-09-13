@@ -10,7 +10,7 @@ var responses =  [{
       text: 'OK. I\'ve added it',
       items: [{
         name: 'shampoo',
-        src: 'http://www.placecage.com/c/200/201',
+        src: '/assets/images/washing_up_liquid',
         quantity: 0
       }],
       actions: [{
@@ -23,7 +23,7 @@ var responses =  [{
       text: 'Sure, it\'s in there',
       items: [{
         name: 'shampoo',
-        src: 'http://www.placecage.com/c/200/201',
+        src: '/assets/images/detergent',
         quantity: 0
       }],
       actions: [{
@@ -36,7 +36,7 @@ var responses =  [{
       text: 'Is this enough?',
       items: [{
         name: 'shampoo',
-        src: 'http://www.placecage.com/c/200/201',
+        src: '/assets/images/detergent_large',
         quantity: 0
       }],
       detail: '2L bottle',
@@ -47,7 +47,7 @@ var responses =  [{
       text: 'Got it',
       items: [{
         name: 'shampoo',
-        src: 'http://www.placecage.com/c/200/201',
+        src: '/assets/images/softner',
         quantity: 0
       }],
       detail: '2L bottle',
@@ -61,15 +61,15 @@ var responses =  [{
       text: 'Any of these?',
       items: [{
         name: 'shampoo',
-        src: 'http://www.placecage.com/c/200/201',
+        src: '/assets/images/softner_0',
         quantity: 0
       }, {
         name: 'shampoo',
-        src: 'http://www.placecage.com/c/200/201',
+        src: '/assets/images/softner_1',
         quantity: 0
       }, {
         name: 'shampoo',
-        src: 'http://www.placecage.com/c/200/201',
+        src: '/assets/images/softner_2',
         quantity: 0
       }]
     }, {
@@ -78,19 +78,19 @@ var responses =  [{
       text: 'Which ones?',
       items: [{
         name: 'shampoo',
-        src: 'http://www.placecage.com/c/200/201',
+        src: '/assets/images/shampoo',
         quantity: 0
       }, {
         name: 'conditioner',
-        src: 'http://www.placecage.com/c/201/201',
+        src: '/assets/images/toothpaste',
         quantity: 0
       }, {
         name: 'deodorant',
-        src: 'http://www.placecage.com/c/202/201',
+        src: '/assets/images/deodorant',
         quantity: 0
       }, {
         name: 'shaving foam',
-        src: 'http://www.placecage.com/c/204/202',
+        src: '/assets/images/shaving_gel',
         quantity: 0
       }]
     }, {
@@ -99,19 +99,19 @@ var responses =  [{
       text: 'OK these are all 100ml',
       items: [{
         name: 'shampoo',
-        src: 'http://www.placecage.com/c/200/201',
+        src: '/assets/images/shampoo_small',
         quantity: 0
       }, {
         name: 'conditioner',
-        src: 'http://www.placecage.com/c/201/201',
+        src: '/assets/images/toothpaste_small',
         quantity: 0
       }, {
         name: 'deodorant',
-        src: 'http://www.placecage.com/c/202/201',
+        src: '/assets/images/deodorant_small',
         quantity: 0
       }, {
         name: 'shaving foam',
-        src: 'http://www.placecage.com/c/204/202',
+        src: '/assets/images/shaving_gel_small',
         quantity: 0
       }]
     }];
