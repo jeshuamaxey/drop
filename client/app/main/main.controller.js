@@ -5,15 +5,25 @@ angular.module('addItApp')
     $scope.messageIndex = 0;
     
     $scope.nextMessage = function() {
+      $scope.chatLog.push({
+        from: 'me',
+        text: $scope.inputMessage
+      });
+      $scope.inputMessage = '';
+
       var url = '/api/messages/next?id=' + $scope.messageIndex;
 
       $http.get(url)
       .then(function(res) {
         console.log(res);
+        $scope.chatLog.push(res.data);
         $scope.messageIndex++;
       });
     };
 
+    $scope.chatLog = [];
+
+    /*
     $scope.chatLog = [{
       from: 'me',
       text: 'I need some washing up liquid'
@@ -143,4 +153,5 @@ angular.module('addItApp')
         quantity: 0
       }]
     }];
+    */
   });

@@ -4,7 +4,7 @@ var _ = require('lodash');
 var Message = require('./message.model');
 var Item = require('../item/item.model');
 
-var responses = [{
+var responses =  [{
       from: 'addit',
       concern: 'confirmation',
       text: 'OK. I\'ve added it',
@@ -13,8 +13,11 @@ var responses = [{
         src: 'http://www.placecage.com/c/200/201',
         quantity: 0
       }],
-      actions: ['undo']
-    },  {
+      actions: [{
+        dodo: 'undo',
+        undo: 're add'
+      }]
+    }, {
       from: 'addit',
       concern: 'confirmation',
       text: 'Sure, it\'s in there',
@@ -23,8 +26,11 @@ var responses = [{
         src: 'http://www.placecage.com/c/200/201',
         quantity: 0
       }],
-      actions: ['undo']
-    },  {
+      actions: [{
+        dodo: 'undo',
+        undo: 're add'
+      }]
+    }, {
       from: 'addit',
       concern: 'decision',
       text: 'Is this enough?',
@@ -33,7 +39,7 @@ var responses = [{
         src: 'http://www.placecage.com/c/200/201',
         quantity: 0
       }],
-      detail: '1L',
+      detail: '2L bottle',
       actions: ['yes', 'no']
     }, {
       from: 'addit',
@@ -44,8 +50,11 @@ var responses = [{
         src: 'http://www.placecage.com/c/200/201',
         quantity: 0
       }],
-      detail: '1L',
-      actions: ['undo']
+      detail: '2L bottle',
+      actions: [{
+        dodo: 'undo',
+        undo: 're add'
+      }]
     }, {
       from: 'addit',
       concern: 'choice',
@@ -87,7 +96,7 @@ var responses = [{
     }, {
       from: 'addit',
       concern: 'multi-choice',
-      text: 'OK',
+      text: 'OK these are all 100ml',
       items: [{
         name: 'shampoo',
         src: 'http://www.placecage.com/c/200/201',
@@ -105,8 +114,7 @@ var responses = [{
         src: 'http://www.placecage.com/c/204/202',
         quantity: 0
       }]
-    }
-  ];
+    }];
 
 // Get list of messages
 exports.index = function(req, res) {
