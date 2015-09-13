@@ -61,7 +61,10 @@ angular.module('addItApp')
         quantity: 0
       }],
       detail: '2L bottle',
-      actions: ['undo']
+      actions: [{
+        dodo: 'undo',
+        undo: 're add'
+      }]
     }, {
       from: 'addit',
       concern: 'choice',

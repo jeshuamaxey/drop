@@ -7,6 +7,8 @@ div.message.clearfix
     p {{msg.text}}
     .image-wrapper(ng-show="msg.items.length")
       img(ng-src="{{msg.items[0].src}}")
+      p.detail(ng-show="msg.detail")
+        | {{msg.detail}}
     button.action.full-width(ng-show="msg.actions.length",
       ng-repeat="action in msg.actions",
       ng-click="done = !done")
@@ -29,7 +31,10 @@ div.message.clearfix
     p {{msg.text}}
     .image-wrapper(ng-show="msg.items.length",
       ng-repeat="item in msg.items")
-      img(ng-src="{{item.src}}")
+      .image-wrapper
+        img(ng-src="{{item.src}}")
+        button.action.full-width.choice(ng-click="choose(item)")
+          | {{ item.chosen ? 'remove' : 'add'}}
 
   //- Multi-choice
   .message-inner.from-addit.multi-choice(ng-show="{{msg.concern === 'multi-choice'}}")
