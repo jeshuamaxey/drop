@@ -10,9 +10,9 @@ div.message.clearfix
       p.detail(ng-show="msg.detail")
         | {{msg.detail}}
     button.action.full-width(ng-show="msg.actions.length",
-      ng-repeat="action in msg.actions",
-      ng-click="done = !done")
-      | {{done ? action.undo : action.dodo}}
+      ng-click="done = !done",
+      ng-class="{'done': done}")
+      | {{done ? msg.actions[0].confirmation : msg.actions[0].cta}}
   
   //- Decision
   .message-inner.from-addit.decision(ng-show="{{msg.concern === 'decision'}}")
@@ -22,7 +22,8 @@ div.message.clearfix
       p.detail(ng-show="msg.detail")
         | {{msg.detail}}
     button.action.half-width(ng-show="msg.actions.length",
-      ng-repeat="action in msg.actions")
+      ng-repeat="action in msg.actions",
+      ng-click="makeDecision($event, action)")
       | {{action}}
 
   

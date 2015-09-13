@@ -14,8 +14,8 @@ var responses =  [{
         quantity: 0
       }],
       actions: [{
-        dodo: 'undo',
-        undo: 're add'
+        cta: 'undo',
+        confirmation: 'undone'
       }]
     }, {
       from: 'addit',
@@ -27,8 +27,8 @@ var responses =  [{
         quantity: 0
       }],
       actions: [{
-        dodo: 'undo',
-        undo: 're add'
+        cta: 'undo',
+        confirmation: 'undone'
       }]
     }, {
       from: 'addit',
@@ -44,7 +44,7 @@ var responses =  [{
     }, {
       from: 'addit',
       concern: 'confirmation',
-      text: 'Safe',
+      text: 'Got it',
       items: [{
         name: 'shampoo',
         src: 'http://www.placecage.com/c/200/201',
@@ -52,8 +52,8 @@ var responses =  [{
       }],
       detail: '2L bottle',
       actions: [{
-        dodo: 'undo',
-        undo: 're add'
+        cta: 'undo',
+        confirmation: 'undone'
       }]
     }, {
       from: 'addit',

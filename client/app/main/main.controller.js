@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('addItApp')
-  .controller('MainCtrl', function($scope, $http, socket) {
+  .controller('MainCtrl', function($scope, $http, $timeout) {
     $scope.messageIndex = 0;
     
     $scope.nextMessage = function() {
@@ -10,19 +10,25 @@ angular.module('addItApp')
         text: $scope.inputMessage
       });
       $scope.inputMessage = '';
+      scrollToBottomOfChat();
 
       var url = '/api/messages/next?id=' + $scope.messageIndex;
 
       $http.get(url)
       .then(function(res) {
-        console.log(res);
         $scope.chatLog.push(res.data);
         $scope.messageIndex++;
+        scrollToBottomOfChat();
       });
     };
 
     $scope.chatLog = [];
 
+    function scrollToBottomOfChat() {
+      $timeout(function() {
+        window.scrollTo(0, 1000000000000000);
+      }, 10)
+    }
     /*
     $scope.chatLog = [{
       from: 'me',

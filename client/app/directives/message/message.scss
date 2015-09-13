@@ -53,6 +53,9 @@
         border-top: none;
         border-bottom: solid $light-grey 1px;
       }
+      &.done {
+        background: $green;
+      }
     }
 
     &.multi-choice {
